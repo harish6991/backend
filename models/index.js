@@ -1,0 +1,10 @@
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+const db = {};
+db.category = require('./category.model');
+db.products = require('./products.model');
+db.users = require('./user.model');
+db.roles = require('./roles.model');
+db.refreshToken = require('./refreshToken.model');
+db.ROLES = ['user','admin','guest'];
+module.exports = db

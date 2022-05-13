@@ -1,0 +1,2 @@
+# only ignore nodemodules
+/node_modules
