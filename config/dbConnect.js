@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connect = async () =>{
   try{
-      await mongoose.connect(`mongodb+srv://harish:${process.env.DB_HOST_PASSWORD}@cluster0.777tv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`)
+      await mongoose.connect(`mongodb+srv://${process.env.DB_USER_LIVE}:${process.env.DB_HOST_PASSWORD}@cluster0.xvkpaz9.mongodb.net/?retryWrites=true&w=majority`)
         .then(()=>{
           console.log("The Connection To DataBase Established")
         })
@@ -19,9 +19,3 @@ const connect = async () =>{
 }
 
 module.exports = connect;
-
-
-
-
-//
-// process.env.DB_HOST
