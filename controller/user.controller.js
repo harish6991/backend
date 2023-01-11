@@ -87,6 +87,7 @@ exports.signIn = CatchAsyncError((req,res,next)=>{
       // genrating eacess Token And Refersh Token
       token.access =jwt.sign(userInfo,process.env.PASSWORD_SECRET,{expiresIn:process.env.ACCESS_TOKEN/60+"min"})
       token.refresh = jwt.sign({id:user.id},process.env.PASSWORD_SECRET,{expiresIn:process.env.REFRESH_TOKEN/60+"min"})
+      
       //saving Refresh Token To database And User
       RefreshToken.findOne({userId:user.id})
       .then((user_data)=>{
